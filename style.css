@@ -306,13 +306,16 @@ header > a {
 
 .card > .album-photo {
   width:150px;
+  height:150px;
+
+  object-fit: cover;
   margin-bottom: 10px;
   width: 100%;
   border-radius: inherit;
 }
 
 .card > h3 {
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: 400;
 }
 

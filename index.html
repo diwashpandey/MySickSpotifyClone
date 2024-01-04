@@ -56,12 +56,13 @@
                 <ul class="card-container">
                     
                     <button id="see-all">See all</button>
-                    <li class="card">
+                    <!-- This is here for a format reminder in future -->
+                    <!-- <li class="card">
                         <img src="./Equipments/Icons/MusicPlayer/play.svg" alt="play-icon" class="hovering-play-btn">
                         <img src="./Equipments/Photoes/1.jpg" alt="Title Photo" class="album-photo">
                         <h3>Music Title</h3>
                         <p>Something about music about what it is about blah blah.</p>
-                    </li>
+                    </li> -->
                     
                 </ul>
                 <footer>
@@ -87,17 +88,17 @@
             </div>
         </div>
         <audio id="music">
-            <source src="" type="audio/mp3" id="music-source">
+            <source src="./Equipments/Music/1.mp3" type="audio/mp3" id="music-source">
         </audio>
         <div class="music-player-background"></div>
         <div id="music-player">
-            <input type="range" id="progress-bar">
+            <input type="range" id="progress-bar" onclick="changeTime()">
             <h4 id="music-title">Music-Title</h4>
-            <button id="previous-btn">
+            <button id="previous-btn" onclick="firePrevious()">
                     <img src="./Equipments/Icons/MusicPlayer/previous.svg" alt="previous-icon">
             </button>
 
-            <div class="play-pause-btns">
+            <div class="play-pause-btns" onclick="playPause()">
                 <button>
                     <img src="./Equipments/Icons/MusicPlayer/play.svg" alt="play-icon" class="play-btn play-active">
                 </button>
@@ -106,7 +107,7 @@
                 </button>
             </div>
 
-            <button id="next-btn">
+            <button id="next-btn" onclick="fireNext()">
                 <img src="./Equipments/Icons/MusicPlayer/next.svg" alt="next-icon">
             </button>
         </div>
