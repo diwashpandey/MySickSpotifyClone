@@ -297,13 +297,15 @@ header > a {
   display: flex;
   flex-direction: column;
   background-color: var(--lil-lighter-bg);
+  position:relative;
 
   border-radius: 10px;
 
   text-overflow: ellipsis;
 }
 
-.card > img {
+.card > .album-photo {
+  width:150px;
   margin-bottom: 10px;
   width: 100%;
   border-radius: inherit;
@@ -319,6 +321,27 @@ header > a {
   font-size: 0.7em;
   color: var(--font-color);
   font-weight: 400;
+}
+
+.hovering-play-btn{
+  height:40px;
+  width:40px;
+  padding:10px;
+
+  position:absolute;
+  right:15px;
+  bottom:0px;
+  opacity:0;
+
+  background-color: var(--logo-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor:pointer;
+}
+
+.card:hover>.hovering-play-btn{
+  bottom:75px;
+  opacity:1;
 }
 
 footer > ul {
