@@ -77,22 +77,54 @@ ul {
   flex-direction: column;
   gap: 5px;
 
+  position:relative;
+
   background-color: #000000;
+
+  transition:left 0.5s ease,
+             width 0.5s ease;
 }
 
 .box-2 {
-  width: 79%;
+  min-width: 79%;
   max-height: 97.5vh;
   padding-bottom: 40px;
 
   overflow-y: scroll;
   background-color: var(--back-ground);
   border-radius: 10px;
+  transition:width 0.5s ease;
 }
+
 
 /* .box-2::-webkit-scrollbar{
    display:none;
 } */
+
+.box-1>.reveal-box{
+  height:40px;
+  width:40px;
+  padding:10px;
+  display:none;
+
+  position: absolute;
+
+  border-radius: 50%;
+  background-color: var(--logo-color);
+  top:48%;
+  right:-40px;
+
+  z-index: 1000;
+  transform: rotate(180deg);
+  cursor:pointer;
+  transition:all 0.5s ease;
+}
+
+.box-1>.on-reveal{
+  right:0px;
+  transform: rotate(0deg);
+}
+
 
 .box-1 > nav {
   height: 22%;
@@ -273,14 +305,18 @@ header > a {
   overflow-wrap:normal;
 
   transition: all 0.5s ease;
+  
 }
 
 .card-container-opened{
   width: 100%;
   min-height: 600px;
+  max-height: 2000px;
   padding: 20px;
 
+  overflow-y: scroll;
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 15px;
 
@@ -409,8 +445,34 @@ forrter > pre {
   color: black;
 }
 
+.player-centralizer{
+  width:99vw;
+  height:170px;
+
+  
+  display:flex;
+  justify-content: flex-end;
+
+  position:fixed;
+  bottom:0px;
+}
+
+.music-player-container {
+  height: 141px;
+  width: 422px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+
+  background-color: #00000079;
+  border-radius: 25px;
+}
+
 #music-player {
-  height: 50px;
+  height: 60px;
   width: 300px;
 
   display: flex;
@@ -418,9 +480,9 @@ forrter > pre {
   align-items: center;
   gap: 20px;
 
-  position: fixed;
-  bottom: 40px;
-  right: 6vw;
+  position: absolute;
+  bottom:10px;
+
   background-color: rgb(61, 61, 61);
   border-radius: 50px;
 }
@@ -492,6 +554,16 @@ input{
   color: white;
 }
 
+#music-duration{
+  position: absolute;
+  top: -25px;
+  left:-23px;
+
+  font-size: 0.7em;
+  font-weight: 200;
+  color: white;
+}
+
 #progress-bar {
   -webkit-appearance: none;
 
@@ -514,15 +586,7 @@ input{
   background-color: var(--logo-color);
   border-radius: 50%;
 }
-.music-player-background {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  height: 141px;
-  width: 422px;
-  background-color: #00000026;
-  border-radius: 25px;
-}
+
 
 
 audio{

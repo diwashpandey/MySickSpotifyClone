@@ -6,10 +6,12 @@
     <title>Spotify - Web Player: Music for everyone</title>
     <link rel="shortcut icon" href="./Equipments/Icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
     <div class="hero-box">
         <div class="box-1">
+            <img src="./Equipments/Icons/left.svg" alt="" class=" revealer reveal-box" onclick="revealBox1()">
             <nav class="nav">
                 <ul>
                     <li>
@@ -85,32 +87,35 @@
                 </footer>
             </div>
         </div>
-        <audio id="music">
-            <source src="./Equipments/Music/1.mp3" type="audio/mp3" id="music-source">
-        </audio>
-        <div class="music-player-background"></div>
-        <div id="music-player">
-            <input type="range" id="progress-bar" onclick="player.changeCurrentTime()">
-            <h4 id="music-title">Music-Title</h4>
-            <button id="previous-btn" onclick="player.firePrevious()">
-                    <img src="./Equipments/Icons/MusicPlayer/previous.svg" alt="previous-icon">
-            </button>
+        <audio src="./Equipments/Music/1.mp3" id="music"></audio>
+        <div class="player-centralizer">
+            <div class="music-player-container">
+                <div id="music-player">
+                    <input type="range" id="progress-bar" onclick="player.changeCurrentTime()">
+                    <h4 id="music-title">Music-Title will appear Here</h4>
+                    <h4 id="music-duration">00:00</h4>
+                    <button id="previous-btn" onclick="player.firePrevious()">
+                            <img src="./Equipments/Icons/MusicPlayer/previous.svg" alt="previous-icon">
+                    </button>
 
-            <div class="play-pause-btns" onclick="player.playPause()">
-                <button>
-                    <img src="./Equipments/Icons/MusicPlayer/play.svg" alt="play-icon" class="play-btn play-active">
-                </button>
-                <button>
-                    <img src="./Equipments/Icons/MusicPlayer/pause.svg" alt="pause-icon" class="pause-btn">
-                </button>
+                    <div class="play-pause-btns" onclick="player.playPause()">
+                        <button>
+                            <img src="./Equipments/Icons/MusicPlayer/play.svg" alt="play-icon" class="play-btn play-active">
+                        </button>
+                        <button>
+                            <img src="./Equipments/Icons/MusicPlayer/pause.svg" alt="pause-icon" class="pause-btn">
+                        </button>
+                    </div>
+
+                    <button id="next-btn" onclick="player.fireNext()">
+                        <img src="./Equipments/Icons/MusicPlayer/next.svg" alt="next-icon">
+                    </button>
+                </div>
             </div>
-
-            <button id="next-btn" onclick="player.fireNext()">
-                <img src="./Equipments/Icons/MusicPlayer/next.svg" alt="next-icon">
-            </button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="media.js"></script>
+    <script src="responsive.js"></script>
 </body>
 </html>

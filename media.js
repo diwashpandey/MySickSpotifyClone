@@ -1,7 +1,6 @@
 
 //Getting Music Elements
 var music = document.getElementById("music");
-const musicSrc = document.getElementById("mucic-source");
 
 // Getting Media Kits
 const playPauseBtn = document.querySelector(".play-pause-btns");
@@ -11,6 +10,7 @@ const progress = document.getElementById("progress-bar");
 const pauseIcon = document.querySelector(".pause-btn");
 const playIcon = document.querySelector(".play-btn");
 const currentMusicTitle = document.getElementById("music-title")
+const currentMusicDuration = document.getElementById("music-duration")
 
 
 // Getting Other Buttons
@@ -24,6 +24,12 @@ const cardContainer = document.querySelector(".card-container");
 var musicData = {};
 var currentMusic = 1;
 var paused = true;
+
+// class Responsive{
+//     cardScroll(){
+
+//     }
+// }
 
 class Graphics {
     opened = 0;
@@ -98,8 +104,34 @@ class Graphics {
     }
 
     resetProgress(){
-        progress.max = music.duration;
-        progress.min = music.currentTime;
+        setTimeout(()=>{
+            progress.max = music.duration;
+            progress.min = 0;
+            console.log("max="+music.duration)
+            console.log("min="+music.currentTime)
+        },500)
+        
+    }
+
+    updateDuration(){
+        let time = Math.floor(music.currentTime);
+        let minute = Math.floor(time/60);
+        let seconds = time % 60;
+
+        if (minute >=1 && minute<10){
+            minute = `0${minute}`
+        }
+        if (minute==0){
+            minute = "00"
+        }
+        if (seconds >=1 && seconds<10){
+            seconds = `0${seconds}`
+        }
+        if (seconds==0){
+            seconds = "00"
+        }
+        currentMusicDuration.innerHTML=`${minute}:${seconds}`
+
     }
 }
 
@@ -131,7 +163,6 @@ class MusicPlayer extends Graphics {
         currentMusic = parseInt(number);
         paused = false;
         MusicPlayer.updateMusic();
-        super.resetProgress()
         MusicPlayer.playMusic();
     }
 
@@ -142,7 +173,6 @@ class MusicPlayer extends Graphics {
         currentMusic = currentMusic + 1;
         paused = false;
         MusicPlayer.updateMusic()
-        super.resetProgress()
         MusicPlayer.playMusic()
     }
 
@@ -153,7 +183,6 @@ class MusicPlayer extends Graphics {
         currentMusic = currentMusic - 1;
         paused = false;
         MusicPlayer.updateMusic()
-        super.resetProgress()
         MusicPlayer.playMusic()
     }
 
@@ -162,14 +191,13 @@ class MusicPlayer extends Graphics {
         let url = `./Equipments/Music/${currentMusic}.mp3`
         music.removeAttribute("src")
         music.setAttribute("src", url)
+        graphics.resetProgress()
     }
 
     changeCurrentTime(){
         paused = false;
         music.currentTime = progress.value;
-        console.log("changedTime")
         MusicPlayer.playMusic();
-        console.log("played music")
     }
 
 }
@@ -199,16 +227,29 @@ window.onload = ()=>{
         }
     }).then(player.updateMusic)
     .then(()=>{
-        graphics.resetProgress();
         MusicPlayer.updateMusic();
     })
         .catch((error) => {
             alert("Some error has been ocured! You may not able to see full feature")
+            console.log("The Error is: \n"+error)
         })
-
-
-    
 }
+
+cardContainer.addEventListener("wheel",(e)=>{
+
+    if(seeAllBtn.innerText=="See less"){
+        
+    }
+
+    else{
+        e.preventDefault()
+
+        cardContainer.scrollLeft  += e.deltaY;
+        console.log("called");
+    }
+    
+
+})
 
 
 
@@ -216,6 +257,7 @@ window.onload = ()=>{
 if (music.play) {
     setInterval(() => {
         progress.value = music.currentTime
+        graphics.updateDuration()
     }, 1000)
 }
 
