@@ -45,17 +45,15 @@
         </div>
         <div class="box-2">
             <header>
-                <img src="./Equipments/Icons/left.svg" alt="">
-                <img src="./Equipments/Icons/right.svg" alt="">
+                <img src="./Equipments/Icons/left.svg" alt="back" onclick="graphics.backAndForward('back')">
+                <img src="./Equipments/Icons/right.svg" alt="before" onclick="graphics.backAndForward('forward')">
                 <a href="#" id="sign-in">Sign up</a>
                 <a href="#" id="log-in">Log In</a>
-            </header>
+            </header>  
             <div class="main-container">
                 <h1>Spotify Playlists</h1>
                 
                 <ul class="card-container">
-                    
-                    <button id="see-all">See all</button>
                     <!-- This is here for a format reminder in future -->
                     <!-- <li class="card">
                         <img src="./Equipments/Icons/MusicPlayer/play.svg" alt="play-icon" class="hovering-play-btn">
@@ -66,7 +64,7 @@
                     
                 </ul>
                 <footer>
-                    
+                    <button id="see-all" onclick="graphics.extendCardContainer()">See all</button>
                     <ul>
                         <li><a href="#">Company</a></li>
                         <li><a href="#">About</a></li>
@@ -92,13 +90,13 @@
         </audio>
         <div class="music-player-background"></div>
         <div id="music-player">
-            <input type="range" id="progress-bar" onclick="changeTime()">
+            <input type="range" id="progress-bar" onclick="player.changeCurrentTime()">
             <h4 id="music-title">Music-Title</h4>
-            <button id="previous-btn" onclick="firePrevious()">
+            <button id="previous-btn" onclick="player.firePrevious()">
                     <img src="./Equipments/Icons/MusicPlayer/previous.svg" alt="previous-icon">
             </button>
 
-            <div class="play-pause-btns" onclick="playPause()">
+            <div class="play-pause-btns" onclick="player.playPause()">
                 <button>
                     <img src="./Equipments/Icons/MusicPlayer/play.svg" alt="play-icon" class="play-btn play-active">
                 </button>
@@ -107,7 +105,7 @@
                 </button>
             </div>
 
-            <button id="next-btn" onclick="fireNext()">
+            <button id="next-btn" onclick="player.fireNext()">
                 <img src="./Equipments/Icons/MusicPlayer/next.svg" alt="next-icon">
             </button>
         </div>

@@ -86,7 +86,6 @@ ul {
   padding-bottom: 40px;
 
   overflow-y: scroll;
-
   background-color: var(--back-ground);
   border-radius: 10px;
 }
@@ -192,6 +191,7 @@ nav > ul > li {
   align-items: center;
   gap: 10px;
 
+
   background-color: var(--back-ground);
   border-radius: 15px 15px 0 0;
 }
@@ -199,8 +199,16 @@ nav > ul > li {
 header > img {
   height: 60%;
   padding: 5px;
+
   background-color: #000000;
   border-radius: 50%;
+  cursor:pointer;
+  transition: background-color 0.3s ease;
+}
+
+header > img:hover{
+  background-color: #323232;
+
 }
 
 header > a {
@@ -210,6 +218,8 @@ header > a {
   display: flex;
   justify-content: center;
   align-items: center;
+
+
 }
 
 #sign-in {
@@ -218,11 +228,13 @@ header > a {
 
   background-color: transparent;
   border: none;
+
 }
 #log-in {
   background-color: white;
   border-radius: 50px;
   color: black;
+  z-index:100;
 }
 
 .main-container {
@@ -252,35 +264,30 @@ header > a {
 .card-container {
   width: 100%;
   height: 280px;
-
   padding: 20px;
-  /* background-color: #a7a7a73f; */
 
   display: flex;
   gap: 20px;
 
   overflow-x: scroll;
+  overflow-wrap:normal;
+
+  transition: all 0.5s ease;
 }
 
-#see-all {
-  height: 40px;
-  width: 80px;
+.card-container-opened{
+  width: 100%;
+  min-height: 600px;
+  padding: 20px;
 
-  position: absolute;
-  top: 50%;
-  left: 47%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 
-  background-color: rgba(255, 255, 255, 0.802);
-  border: none;
-  color: black;
-  border-radius: 50px;
-
-  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-#see-all:hover {
-  background-color: rgba(255, 255, 255, 0.96);
-}
+
 
 .card-container::-webkit-scrollbar {
   display: block;
@@ -347,6 +354,10 @@ header > a {
   opacity:1;
 }
 
+footer{
+  position:relative;
+}
+
 footer > ul {
   margin-top: 100px;
   width: 70%;
@@ -358,6 +369,27 @@ footer > ul {
 
   font-size: 0.7em;
   font-weight: 400;
+}
+
+#see-all {
+  height: 40px;
+  width: 80px;
+
+  position: absolute;
+  top:-80px;
+  left: 47%;
+
+  z-index:100;
+  background-color: rgba(255, 255, 255, 0.802);
+  border: none;
+  color: black;
+  border-radius: 50px;
+
+  cursor: pointer;
+}
+
+#see-all:hover {
+  background-color: rgba(255, 255, 255, 0.96);
 }
 
 footer > ul > li:nth-child(1) a,
