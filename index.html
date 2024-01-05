@@ -1,121 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify - Web Player: Music for everyone</title>
-    <link rel="shortcut icon" href="./Equipments/Icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
-</head>
-<body>
+    <link
+      rel="shortcut icon"
+      href="./Equipments/Icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body>
     <div class="hero-box">
-        <div class="box-1">
-            <img src="./Equipments/Icons/left.svg" alt="" class=" revealer reveal-box" onclick="revealBox1()">
-            <nav class="nav">
-                <ul>
-                    <li>
-                        <img src="./Equipments/Icons/logo.svg" alt="Spotify LOGO" height="25px">Spotify
-                    </li>
-                    <li>
-                        <img src="./Equipments/Icons/home.svg" alt="home icon" height="25px"><a href="#">Home</a>
-                    </li>
-                    <li>
-                        <img src="./Equipments/Icons/search.svg" alt="home icon" height="25px" id="search-icon"><a href="#">Search</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="library">
-                <div class="lib-title">
-                    <img src="./Equipments/Icons/library.svg" alt="library icon" height="20px">
-                    <h2>Your Library</h2>
-                    <img src="./Equipments/Icons/plus.svg" alt="plus-icon" height="15px" id="plus-icon">
-                </div>
-                <ul id="left-music-container">
-                </ul>
-                <ul class="lower-thirds">
-                    <li><a href="#">Legal</a></li>
-                    <li><a href="#">Privacy Center</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cookies</a></li>
-                    <li><a href="#">About Accessibility</a></li>
-                    <li><a href="#">Cookies</a></li>
-                    <li><a href="#">About Ads</a></li>
-                </ul>
-            </div>
-            
+      <div class="box-1">
+        <img
+          src="./Equipments/Icons/left.svg"
+          alt=""
+          class="revealer reveal-box"
+          onclick="revealBox1()"
+        />
+        <nav class="nav">
+          <ul>
+            <li>
+              <img
+                src="./Equipments/Icons/logo.svg"
+                alt="Spotify LOGO"
+                height="25px"
+              />Spotify
+            </li>
+            <li>
+              <img
+                src="./Equipments/Icons/home.svg"
+                alt="home icon"
+                height="25px"
+              /><a href="#">Home</a>
+            </li>
+            <li>
+              <img
+                src="./Equipments/Icons/search.svg"
+                alt="home icon"
+                height="25px"
+                id="search-icon"
+              /><a href="#">Search</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="library">
+          <div class="lib-title">
+            <img
+              src="./Equipments/Icons/library.svg"
+              alt="library icon"
+              height="20px"
+            />
+            <h2>Your Library</h2>
+            <img
+              src="./Equipments/Icons/plus.svg"
+              alt="plus-icon"
+              height="15px"
+              id="plus-icon"
+            />
+          </div>
+          <ul id="left-music-container">
+            <li></li>
+          </ul>
+          <ul class="lower-thirds">
+            <li><a href="#">Legal</a></li>
+            <li><a href="#">Privacy Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">About Accessibility</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">About Ads</a></li>
+          </ul>
         </div>
-        <div class="box-2">
-            <header>
-                <img src="./Equipments/Icons/left.svg" alt="back" onclick="graphics.backAndForward('back')">
-                <img src="./Equipments/Icons/right.svg" alt="before" onclick="graphics.backAndForward('forward')">
-                <a href="#" id="sign-in">Sign up</a>
-                <a href="#" id="log-in">Log In</a>
-            </header>  
-            <div class="main-container">
-                <h1>Spotify Playlists</h1>
-                
-                <ul class="card-container">
-                    <!-- This is here for a format reminder in future -->
-                    <!-- <li class="card">
+      </div>
+      <div class="box-2">
+        <header>
+          <img
+            src="./Equipments/Icons/left.svg"
+            alt="back"
+            onclick="graphics.backAndForward('back')"
+          />
+          <img
+            src="./Equipments/Icons/right.svg"
+            alt="before"
+            onclick="graphics.backAndForward('forward')"
+          />
+          <a href="#" id="sign-in">Sign up</a>
+          <a href="#" id="log-in">Log In</a>
+        </header>
+        <div class="main-container">
+          <h1>Spotify Playlists</h1>
+
+          <ul class="card-container">
+            <!-- This is here for a format reminder in future -->
+            <!-- <li class="card">
                         <img src="./Equipments/Icons/MusicPlayer/play.svg" alt="play-icon" class="hovering-play-btn">
                         <img src="./Equipments/Photoes/1.jpg" alt="Title Photo" class="album-photo">
                         <h3>Music Title</h3>
                         <p>Something about music about what it is about blah blah.</p>
                     </li> -->
-                    
-                </ul>
-                <footer>
-                    <button id="see-all" onclick="graphics.extendCardContainer()">See all</button>
-                    <ul>
-                        <li><a href="#">Company</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">For the Record</a></li>
-                        <li><a href="#">Communities</a></li>
-                        <li><a href="#">For Artists</a></li>
-                        <li><a href="#">Developers</a></li>
-                        <li><a href="#">Advertising</a></li>
-                        <li><a href="#">Investors</a></li>
-                        <li><a href="#">Vendors</a></li>
-                        <li><a href="#">Useful links</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Free Mobile App</a></li>
-                    </ul>
-                    <hr>
-                    <pre>© 2024 Spotify AB</pre>
-                </footer>
-            </div>
+          </ul>
+          <footer>
+            <button id="see-all" onclick="graphics.extendCardContainer()">
+              See all
+            </button>
+            <ul>
+              <li><a href="#">Company</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">For the Record</a></li>
+              <li><a href="#">Communities</a></li>
+              <li><a href="#">For Artists</a></li>
+              <li><a href="#">Developers</a></li>
+              <li><a href="#">Advertising</a></li>
+              <li><a href="#">Investors</a></li>
+              <li><a href="#">Vendors</a></li>
+              <li><a href="#">Useful links</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Free Mobile App</a></li>
+            </ul>
+            <hr />
+            <pre>© 2024 Spotify AB</pre>
+          </footer>
         </div>
-        <audio src="./Equipments/Music/1.mp3" id="music"></audio>
-        <div class="player-centralizer">
-            <div class="music-player-container">
-                <div id="music-player">
-                    <input type="range" id="progress-bar" onclick="player.changeCurrentTime()">
-                    <h4 id="music-title">Music-Title will appear Here</h4>
-                    <h4 id="music-duration">00:00</h4>
-                    <button id="previous-btn" onclick="player.firePrevious()">
-                            <img src="./Equipments/Icons/MusicPlayer/previous.svg" alt="previous-icon">
-                    </button>
+      </div>
+      <audio src="./Equipments/Music/1.mp3" id="music"></audio>
 
-                    <div class="play-pause-btns" onclick="player.playPause()">
-                        <button>
-                            <img src="./Equipments/Icons/MusicPlayer/play.svg" alt="play-icon" class="play-btn play-active">
-                        </button>
-                        <button>
-                            <img src="./Equipments/Icons/MusicPlayer/pause.svg" alt="pause-icon" class="pause-btn">
-                        </button>
-                    </div>
+      <div class="music-player-container">
+        <div id="music-player">
+          <input
+            type="range"
+            id="progress-bar"
+            onclick="player.changeCurrentTime()"
+          />
+          <h4 id="music-title">Music-Title will appear Here</h4>
+          <h4 id="music-duration">00:00</h4>
+          <button id="previous-btn" onclick="player.firePrevious()">
+            <img
+              src="./Equipments/Icons/MusicPlayer/previous.svg"
+              alt="previous-icon"
+            />
+          </button>
 
-                    <button id="next-btn" onclick="player.fireNext()">
-                        <img src="./Equipments/Icons/MusicPlayer/next.svg" alt="next-icon">
-                    </button>
-                </div>
-            </div>
+          <div class="play-pause-btns" onclick="player.playPause()">
+            <button>
+              <img
+                src="./Equipments/Icons/MusicPlayer/play.svg"
+                alt="play-icon"
+                class="play-btn play-active"
+              />
+            </button>
+            <button>
+              <img
+                src="./Equipments/Icons/MusicPlayer/pause.svg"
+                alt="pause-icon"
+                class="pause-btn"
+              />
+            </button>
+          </div>
+
+          <button id="next-btn" onclick="player.fireNext()">
+            <img
+              src="./Equipments/Icons/MusicPlayer/next.svg"
+              alt="next-icon"
+            />
+          </button>
         </div>
+      </div>
     </div>
 
     <script src="media.js"></script>
     <script src="responsive.js"></script>
-</body>
+  </body>
 </html>
