@@ -73,64 +73,64 @@ class Graphics {
         }
     }
 
-    extendCardContainer(){
-        
-        if(seeAllBtn.innerText=="See all"){
+    extendCardContainer() {
+
+        if (seeAllBtn.innerText == "See all") {
             this.opened = 1;
             cardContainer.classList.add("card-container-opened")
             cardContainer.classList.remove("card-container")
-            seeAllBtn.innerText="See less";
+            seeAllBtn.innerText = "See less";
         }
-        else if(seeAllBtn.innerText=="See less"){
+        else if (seeAllBtn.innerText == "See less") {
             cardContainer.classList.add("card-container")
             cardContainer.classList.remove("card-container-opened")
-            seeAllBtn.innerText="See all";
+            seeAllBtn.innerText = "See all";
         }
     }
 
-    backAndForward(command){
-        if(this.opened == 1){
-            if (command == "back"){
-                if(seeAllBtn.innerText=="See less"){
+    backAndForward(command) {
+        if (this.opened == 1) {
+            if (command == "back") {
+                if (seeAllBtn.innerText == "See less") {
                     this.extendCardContainer()
                 }
             }
-            else if(command == "forward"){
-                if(seeAllBtn.innerText=="See all"){
+            else if (command == "forward") {
+                if (seeAllBtn.innerText == "See all") {
                     this.extendCardContainer()
                 }
             }
         }
     }
 
-    resetProgress(){
-        setTimeout(()=>{
+    resetProgress() {
+        setTimeout(() => {
             progress.max = music.duration;
             progress.min = 0;
-            console.log("max="+music.duration)
-            console.log("min="+music.currentTime)
-        },500)
-        
+            console.log("max=" + music.duration)
+            console.log("min=" + music.currentTime)
+        }, 500)
+
     }
 
-    updateDuration(){
+    updateDuration() {
         let time = Math.floor(music.currentTime);
-        let minute = Math.floor(time/60);
+        let minute = Math.floor(time / 60);
         let seconds = time % 60;
 
-        if (minute >=1 && minute<10){
+        if (minute >= 1 && minute < 10) {
             minute = `0${minute}`
         }
-        if (minute==0){
+        if (minute == 0) {
             minute = "00"
         }
-        if (seconds >=1 && seconds<10){
+        if (seconds >= 1 && seconds < 10) {
             seconds = `0${seconds}`
         }
-        if (seconds==0){
+        if (seconds == 0) {
             seconds = "00"
         }
-        currentMusicDuration.innerHTML=`${minute}:${seconds}`
+        currentMusicDuration.innerHTML = `${minute}:${seconds}`
 
     }
 }
@@ -194,7 +194,7 @@ class MusicPlayer extends Graphics {
         graphics.resetProgress()
     }
 
-    changeCurrentTime(){
+    changeCurrentTime() {
         paused = false;
         music.currentTime = progress.value;
         MusicPlayer.playMusic();
@@ -212,11 +212,11 @@ const player = new MusicPlayer();
 const graphics = new Graphics();
 
 
-window.onload = ()=>{
+window.onload = () => {
     getMusicData().then((response) => {
         musicData = response;
         let length = Object.keys(musicData).length;
-    
+
         for (let i = 1; i <= length; i++) {
             let title = musicData[i];
             graphics.createCards(i, title)
@@ -226,28 +226,28 @@ window.onload = ()=>{
             graphics.createCards(i, title)
         }
     }).then(player.updateMusic)
-    .then(()=>{
-        MusicPlayer.updateMusic();
-    })
+        .then(() => {
+            MusicPlayer.updateMusic();
+        })
         .catch((error) => {
             alert("Some error has been ocured! You may not able to see full feature")
-            console.log("The Error is: \n"+error)
+            console.log("The Error is: \n" + error)
         })
 }
 
-cardContainer.addEventListener("wheel",(e)=>{
+cardContainer.addEventListener("wheel", (e) => {
 
-    if(seeAllBtn.innerText=="See less"){
-        
+    if (seeAllBtn.innerText == "See less") {
+
     }
 
-    else{
+    else {
         e.preventDefault()
 
-        cardContainer.scrollLeft  += e.deltaY;
+        cardContainer.scrollLeft += e.deltaY;
         console.log("called");
     }
-    
+
 
 })
 
