@@ -181,6 +181,8 @@ nav > ul > li {
 .lib-title {
   padding-left: 18px;
 
+  position:relative;
+
   display: flex;
   align-items: center;
   gap: 10px;
@@ -188,9 +190,37 @@ nav > ul > li {
   font-size: 0.5em;
 }
 
-#plus-icon {
-  margin-left: auto;
-  margin-right: 5px;
+.modebox{
+  height:30px;
+  width:30px;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  position:absolute;
+  right:5px;
+
+  background-color: var(--font-color);
+  border-radius: 50%;
+}
+
+.sun-icon{
+  height:20px;
+  position:absolute;
+  transform: scale(0) rotate(180deg);
+  transition: all 0.3s ease;
+}
+
+.moon-icon{
+  height:20px;
+  position:absolute;
+  transform: scale(0) rotate(180deg);
+  transition: all 0.3s ease;
+}
+
+.theme-active{
+  transform: scale(1) rotate(0deg);
 }
 
 #left-music-container {
