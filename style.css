@@ -78,12 +78,11 @@ ul {
   flex-direction: column;
   gap: 5px;
 
-  position:relative;
+  position: relative;
 
   background-color: #000000;
 
-  transition:left 0.5s ease,
-             width 0.5s ease;
+  transition: left 0.5s ease, width 0.5s ease;
 }
 
 .box-2 {
@@ -94,38 +93,36 @@ ul {
   overflow-y: scroll;
   background-color: var(--back-ground);
   border-radius: 10px;
-  transition:width 0.5s ease;
+  transition: width 0.5s ease;
 }
-
 
 /* .box-2::-webkit-scrollbar{
    display:none;
 } */
 
-.box-1>.reveal-box{
-  height:40px;
-  width:40px;
-  padding:10px;
-  display:none;
+.box-1 > .reveal-box {
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  display: none;
 
   position: absolute;
 
   border-radius: 50%;
   background-color: var(--logo-color);
-  top:48%;
-  right:-40px;
+  top: 48%;
+  right: -40px;
 
   z-index: 1000;
   transform: rotate(180deg);
-  cursor:pointer;
-  transition:all 0.5s ease;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-.box-1>.on-reveal{
-  right:0px;
+.box-1 > .on-reveal {
+  right: 0px;
   transform: rotate(0deg);
 }
-
 
 .box-1 > nav {
   height: 22%;
@@ -224,7 +221,6 @@ nav > ul > li {
   align-items: center;
   gap: 10px;
 
-
   background-color: var(--back-ground);
   border-radius: 15px 15px 0 0;
 }
@@ -235,13 +231,12 @@ header > img {
 
   background-color: #000000;
   border-radius: 50%;
-  cursor:pointer;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-header > img:hover{
+header > img:hover {
   background-color: #323232;
-
 }
 
 header > a {
@@ -251,8 +246,6 @@ header > a {
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
 
 #sign-in {
@@ -261,13 +254,12 @@ header > a {
 
   background-color: transparent;
   border: none;
-
 }
 #log-in {
   background-color: white;
   border-radius: 50px;
   color: black;
-  z-index:100;
+  z-index: 100;
 }
 
 .main-container {
@@ -304,13 +296,11 @@ header > a {
 
   overflow-x: scroll;
 
-
   transition: all 0.5s ease;
-  z-index:50;
-  
+  z-index: 50;
 }
 
-.card-container-opened{
+.card-container-opened {
   width: 100%;
   min-height: 600px;
   max-height: 2000px;
@@ -324,8 +314,6 @@ header > a {
 
   transition: all 0.5s ease;
 }
-
-
 
 .card-container::-webkit-scrollbar {
   display: block;
@@ -342,7 +330,7 @@ header > a {
   display: flex;
   flex-direction: column;
   background-color: var(--lil-lighter-bg);
-  position:relative;
+  position: relative;
 
   border-radius: 10px;
 
@@ -350,8 +338,8 @@ header > a {
 }
 
 .card > .album-photo {
-  width:150px;
-  height:150px;
+  width: 150px;
+  height: 150px;
 
   object-fit: cover;
   margin-bottom: 10px;
@@ -371,29 +359,29 @@ header > a {
   font-weight: 400;
 }
 
-.hovering-play-btn{
-  height:40px;
-  width:40px;
-  padding:10px;
+.hovering-play-btn {
+  height: 40px;
+  width: 40px;
+  padding: 10px;
 
-  position:absolute;
-  right:15px;
-  bottom:0px;
-  opacity:0;
+  position: absolute;
+  right: 15px;
+  bottom: 0px;
+  opacity: 0;
 
   background-color: var(--logo-color);
   border-radius: 50%;
   transition: all 0.3s ease;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.card:hover>.hovering-play-btn{
-  bottom:75px;
-  opacity:1;
+.card:hover > .hovering-play-btn {
+  bottom: 75px;
+  opacity: 1;
 }
 
-footer{
-  position:relative;
+footer {
+  position: relative;
 }
 
 footer > ul {
@@ -414,10 +402,10 @@ footer > ul {
   width: 80px;
 
   position: absolute;
-  top:-80px;
+  top: -80px;
   left: 47%;
 
-  z-index:10;
+  z-index: 10;
   background-color: rgba(255, 255, 255, 0.802);
   border: none;
   color: black;
@@ -456,8 +444,8 @@ forrter > pre {
   justify-content: center;
 
   position: absolute;
-  bottom:20px;
-  right:20px;
+  bottom: 20px;
+  right: 20px;
 
   background-color: #00000079;
   border-radius: 25px;
@@ -473,7 +461,7 @@ forrter > pre {
   gap: 20px;
 
   position: absolute;
-  bottom:10px;
+  bottom: 10px;
 
   background-color: rgb(61, 61, 61);
   border-radius: 50px;
@@ -519,22 +507,22 @@ forrter > pre {
   position: absolute;
 }
 
-input{
-    z-index:30;
+input {
+  z-index: 30;
 }
 
-.play-btn{
-    transform: scale(0);
-    transition: transform 0.2s ease;
-    z-index:10;
+.play-btn {
+  transform: scale(0);
+  transition: transform 0.2s ease;
+  z-index: 10;
 }
-.pause-btn{
-    transform: scale(0);
-    transition: transform 0.2s ease;
+.pause-btn {
+  transform: scale(0);
+  transition: transform 0.2s ease;
 }
 
-.play-active{
-    transform:scale(1);
+.play-active {
+  transform: scale(1);
 }
 
 #music-title {
@@ -546,10 +534,10 @@ input{
   color: white;
 }
 
-#music-duration{
+#music-duration {
   position: absolute;
   top: -25px;
-  left:-23px;
+  left: -23px;
 
   font-size: 0.7em;
   font-weight: 200;
@@ -579,8 +567,6 @@ input{
   border-radius: 50%;
 }
 
-
-
-audio{
-    position:fixed;
+audio {
+  position: fixed;
 }

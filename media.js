@@ -25,11 +25,7 @@ var musicData = {};
 var currentMusic = 1;
 var paused = true;
 
-// class Responsive{
-//     cardScroll(){
 
-//     }
-// }
 
 class Graphics {
     opened = 0;
@@ -121,9 +117,11 @@ class Graphics {
         if (minute >= 1 && minute < 10) {
             minute = `0${minute}`
         }
+
         if (minute == 0) {
             minute = "00"
         }
+
         if (seconds >= 1 && seconds < 10) {
             seconds = `0${seconds}`
         }
