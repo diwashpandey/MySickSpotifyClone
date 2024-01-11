@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap");
 
+:root {
+  --hard-color: #000000;
+  --back-ground: #121212;
+  --lil-lighter-bg: #1a1a1a;
+  --font-color: #a7a7a7;
+  --logo-color: #0fbb4b;
+}
+
+.light_active{
+  --hard-color: #ffffff;
+  --back-ground: #a2a2a2;
+  --lil-lighter-bg: #d2d2d2;
+  --font-color: #000000;
+  --logo-color: #0fbb4b;
+}
+
 ::-webkit-scrollbar {
   display: none;
   background-color: transparent;
@@ -41,12 +57,7 @@ ul {
   list-style-type: none;
 }
 
-:root {
-  --back-ground: #121212;
-  --font-color: #a7a7a7;
-  --lil-lighter-bg: #1a1a1a;
-  --logo-color: #0fbb4b;
-}
+
 
 .center {
   display: flex;
@@ -80,7 +91,7 @@ ul {
 
   position: relative;
 
-  background-color: #000000;
+  background-color: var(--hard-color);
 
   transition: left 0.5s ease, width 0.5s ease;
 }
@@ -201,7 +212,7 @@ nav > ul > li {
   position:absolute;
   right:5px;
 
-  background-color: var(--font-color);
+  background-color: var(--lil-lighter-bg);
   border-radius: 50%;
 }
 
